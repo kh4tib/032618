@@ -1,0 +1,93 @@
+// Global Syles
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Anton', sans-serif;
+}
+
+::selection {
+    background: slateblue;
+    opacity: .25;
+}
+// Main Styles
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: #161616;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    
+    .type {
+        font-size: 10rem;
+        color: #fff;
+        text-transform: uppercase;
+        z-index: 2;
+    }
+
+    .rectangle-one {
+        width: 8rem;
+        height: 24rem;
+        border: 1rem solid slateblue;
+        border-left: 1rem solid rgba(0,0,0,0.0);
+        position: absolute;
+        z-index: 1;
+        animation: rotate-animation 5s linear forwards infinite;
+    }
+
+    .rectangle-two {
+        width: 8rem;
+        height: 24rem;
+        border-left: 1rem solid rgba(0,0,0,0.0);
+        position: absolute;
+        z-index: 4;  
+        animation: rotate-animation 5s linear forwards infinite;
+    
+        &::after {
+            content: "";
+            width: 1rem;
+            height: 100%;
+            background: slateblue;
+            box-shadow: 5px 0px 10px rgba(0,0,0,0.75);
+            z-index: 3;
+            position: absolute;
+            left: -1rem;            
+        }
+
+    }
+
+    .rectangle-three {
+        width: 8rem;
+        height: 24rem;
+        border-top: 1rem solid slateblue;
+        border-bottom: 1rem solid slateblue;
+        position: absolute;
+        z-index: 5;  
+        animation: rotate-animation 5s linear forwards infinite;
+    }
+}
+
+@keyframes rotate-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
